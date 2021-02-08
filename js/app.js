@@ -53,10 +53,7 @@ const updateUI = (data) => {
          inputField.classList.add('input-height');
          card.classList.add('card-move');
      }, 0);
-    
-    
-  
-};
+    };
 
 const updateCity = async (city) => {
 
@@ -74,9 +71,7 @@ cityForm.addEventListener('submit', (e) => {
     e.preventDefault();
     // get city value 
     const city = cityForm.city.value.trim();
-    
-   
-     cityForm.reset();
+    cityForm.reset();
     
     // update he ui with new city 
     updateCity(city).then(data => {
