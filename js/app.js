@@ -46,6 +46,8 @@ const updateUI = (data) => {
         card.classList.remove('d-none')
        
      }
+    
+    card.classList.remove('card-move');
      setTimeout(() => {
          cityForm.classList.add('trans');
          inputField.classList.add('input-height');
