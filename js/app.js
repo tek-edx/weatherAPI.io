@@ -25,7 +25,7 @@ const updateUI = (data) => {
     // update the day $ and night images
    
     
-    const iconSrc = `../assert/icons/${weather.WeatherIcon}.svg`;
+    const iconSrc = `./assert/icons/${weather.WeatherIcon}.svg`;
 
     icon.setAttribute('src',iconSrc);
     
@@ -33,9 +33,9 @@ const updateUI = (data) => {
 
     let timeSrc = null;
     if(weather.IsDayTime){
-        timeSrc = 'https://github.com/tek-edx/weatherAPI.io/blob/master/assert/day.svg';
+        timeSrc = './assert/day.svg';
     }else{
-        timeSrc = '../assert/night.svg';
+        timeSrc = './assert/night.svg';
     }
 
     time.setAttribute('src',timeSrc);
