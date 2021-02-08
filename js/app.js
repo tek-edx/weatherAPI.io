@@ -3,6 +3,7 @@ const card = document.querySelector('.card');
 const details = document.querySelector(".details");
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const inputField = document.querySelector('#city');
 
 const updateUI = (data) => {
 
@@ -23,14 +24,16 @@ const updateUI = (data) => {
 
     // update the day $ and night images
    
+    
     const iconSrc = `../assert/icons/${weather.WeatherIcon}.svg`;
 
     icon.setAttribute('src',iconSrc);
     
 
+
     let timeSrc = null;
     if(weather.IsDayTime){
-        timeSrc = '../assert/day.svg';
+        timeSrc = 'https://github.com/tek-edx/weatherAPI.io/blob/master/assert/day.svg';
     }else{
         timeSrc = '../assert/night.svg';
     }
@@ -38,10 +41,19 @@ const updateUI = (data) => {
     time.setAttribute('src',timeSrc);
 
     //remove the d-none class if present
-
-    if (card.classList.contains('d-none')) {
+    
+     if (card.classList.contains('d-none')) {
         card.classList.remove('d-none')
-    }
+       
+     }
+     setTimeout(() => {
+         cityForm.classList.add('trans');
+         inputField.classList.add('input-height');
+         card.classList.add('card-move');
+     }, 0);
+    
+    
+  
 };
 
 const updateCity = async (city) => {
@@ -60,7 +72,10 @@ cityForm.addEventListener('submit', (e) => {
     e.preventDefault();
     // get city value 
     const city = cityForm.city.value.trim();
-    cityForm.reset();
+    
+   
+     cityForm.reset();
+    
     // update he ui with new city 
     updateCity(city).then(data => {
         updateUI(data)
