@@ -48,5 +48,5 @@ body {
 
 .card-move {
     transform: translate(0px,-190px);
-    transition: transform 4s;
+    transition: transform 2s;
 }

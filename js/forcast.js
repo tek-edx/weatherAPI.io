@@ -24,6 +24,11 @@ const getCity = async (city) => {
     const response = await fetch(base + query);
 
     const data = await response.json();
+    if( data.length < 1){
+        throw new Error ('City not Found');
+    }
+    
+
     return data[0];
 
 };
